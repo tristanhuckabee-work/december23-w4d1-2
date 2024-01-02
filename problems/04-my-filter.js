@@ -20,12 +20,23 @@ console.log(result2);      // ['choose', 'words', 'only']
 *******************************************************************************/
 
 function myFilter(array, cb) {
-    // Your code here 
+  let res = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i];
+    let bool = cb(element);
+
+    if (bool == true) {
+      res.push(element);
+    }
+  }
+
+  return res;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
-    module.exports = myFilter;
-} catch(e) {
-    return null;
+  module.exports = myFilter;
+} catch (e) {
+  return null;
 }

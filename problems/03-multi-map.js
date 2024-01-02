@@ -22,12 +22,18 @@ console.log(result3); // hi!!!!!
 *******************************************************************************/
 
 function multiMap(val, n, cb) {
-  // Your code here 
+  let res = val;
+
+  for (let i = 0; i < n; i++) {
+    res = cb(res);
+  }
+
+  return res;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = multiMap;
-} catch(e) {
+} catch (e) {
   return null;
 }
