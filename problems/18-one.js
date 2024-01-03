@@ -38,12 +38,18 @@ console.log(result6);   // true
 *******************************************************************************/
 
 function one(array, cb) {
-  // Your code here 
+  let count = array.reduce((accum, el, i) => {
+    let bool = cb(el, i);
+    if (bool) return accum + 1;
+    return accum;
+  }, 0);
+
+  return count === 1;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = one;
-} catch(e) {
+} catch (e) {
   return null;
 }

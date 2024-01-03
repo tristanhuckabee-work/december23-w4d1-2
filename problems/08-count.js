@@ -27,12 +27,17 @@ console.log(result4); // 0
 *******************************************************************************/
 
 function count(array, cb) {
-  // Your code here 
+  return array.reduce((accum, el) => {
+    let res = cb(el);
+    
+    if (res) return accum + 1;
+    return accum;
+  }, 0);
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = count;
-} catch(e) {
+} catch (e) {
   return null;
 }

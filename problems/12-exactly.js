@@ -28,7 +28,12 @@ console.log(result4); // true
 *******************************************************************************/
 
 function exactly(array, num, cb) {
-  // Your code here 
+  let count = array.reduce((accum, el) => {
+    if (cb(el)) return accum + 1;
+    return accum;
+  },0 )
+  
+  return count === num;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
